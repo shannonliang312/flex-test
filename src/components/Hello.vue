@@ -1,6 +1,7 @@
 <template>
-  <div class="hello">
-    
+  
+  <div class="box">
+    <div class="item" v-for="item in data" >{{item}}</div>
   </div>
 </template>
 
@@ -9,7 +10,8 @@ export default {
   name: 'hello',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      data: [1,2,3,4,5,6,7,8,9,10]
+
     }
   }
 }
@@ -17,21 +19,18 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
-  font-weight: normal;
-}
+  .box {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;    
+  }
 
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
-}
+  .item {
+    /*width: 10%;*/
+    padding: 10px;
+    margin: 10px;
+    border: black 1px solid;
+  }
 </style>
